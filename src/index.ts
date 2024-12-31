@@ -1,11 +1,18 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose';
 import {userRouter} from './userRouter';
 dotenv.config()
 
 const app = express();
 
 app.use('/api/v1/users', userRouter);
+
+
+mongoose.connect('mongodb+srv://kesagoniyashwanth:wHf2AFIye2clfg6s@cluster0.0a3g4.mongodb.net/Users').then(()=>{
+    console.log('mongodb is connected')
+})
+
 
 
 app.listen(process.env.PORT,()=>{
