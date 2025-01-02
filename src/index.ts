@@ -5,11 +5,11 @@ import {userRouter} from './userRouter';
 dotenv.config()
 
 const app = express();
-
+app.use(express.json());
 app.use('/api/v1/users', userRouter);
 
 
-mongoose.connect('mongodb+srv://kesagoniyashwanth:wHf2AFIye2clfg6s@cluster0.0a3g4.mongodb.net/Users').then(()=>{
+mongoose.connect('mongodb+srv://kesagoniyashwanth:wHf2AFIye2clfg6s@cluster0.0a3g4.mongodb.net/Secondbrain').then(()=>{
     console.log('mongodb is connected')
 })
 
